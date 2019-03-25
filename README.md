@@ -18,7 +18,7 @@ Let's look at some examples to show our case.
 We can use `ojai-generics` to reduce the boilerplate code we are forced to write when using OJAI Java like API by using 
 generics and idiomatic Scala.
 
-Let's build another example from scratch so show in more details the advantages of using `ojai-generics`.
+Let's build an example from scratch so show in more details the advantages of using `ojai-generics`.
 
 Suppose we want to create a `QueryCondition` for a value coming from a Spark DataFrame, normally coming as `Any`.
 
