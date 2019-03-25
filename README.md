@@ -5,7 +5,7 @@ Thin, generic, scala idiomatic layer on top of MapR OJAI
 `ojai-generics` presents a very thin layer on top of OJAI that easies working with OJAI from Scala by adding idiomatic 
 Scala constructs. 
 
-## QuerycConditions Add-Ons
+## QueryConditions Add-Ons
 
 The OJAI is written in Java and functions around `QueryCondition` use method overriden for different data types. In other words, 
 in order to build a query, we need to know the exact type we are using at compile time, and while this seems like a good idea,
