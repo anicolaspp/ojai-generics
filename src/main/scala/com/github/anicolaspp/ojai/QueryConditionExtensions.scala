@@ -1,9 +1,10 @@
 package com.github.anicolaspp.ojai
 
+import java.nio.ByteBuffer
 import java.sql.Timestamp
 
 import org.ojai.store.QueryCondition
-import org.ojai.types.OTimestamp
+import org.ojai.types.{ODate, OInterval, OTimestamp}
 
 object QueryConditionExtensions {
 
@@ -42,16 +43,20 @@ object QueryConditionExtensions {
   }
 
   case class FieldQuery private[anicolaspp](cond: QueryCondition, field: String) {
+
+
     def is[A](op: QueryCondition.Op, value: A): QueryCondition = value match {
-      case _: Double => cond.is(field, op, value.asInstanceOf[Double])
       case _: Float => cond.is(field, op, value.asInstanceOf[Float])
-      case _: Int => cond.is(field, op, value.asInstanceOf[Int])
+      case _: BigDecimal => cond.is(field, op, value.asInstanceOf[BigDecimal].bigDecimal)
       case _: Long => cond.is(field, op, value.asInstanceOf[Long])
-      case _: Short => cond.is(field, op, value.asInstanceOf[Short])
-      case _: Boolean => cond.is(field, op, value.asInstanceOf[Boolean])
-      case _: Byte => cond.is(field, op, value.asInstanceOf[Byte])
-      case _: String => cond.is(field, op, value.asInstanceOf[String])
       case _: Timestamp => cond.is(field, op, new OTimestamp(value.asInstanceOf[Timestamp].getTime))
+      case _: Boolean => cond.is(field, op, value.asInstanceOf[Boolean])
+      case _: Short => cond.is(field, op, value.asInstanceOf[Short])
+      case _: Int => cond.is(field, op, value.asInstanceOf[Int])
+      case _: Byte => cond.is(field, op, value.asInstanceOf[Byte])
+      case _: Double => cond.is(field, op, value.asInstanceOf[Double])
+      case _: String => cond.is(field, op, value.asInstanceOf[String])
+      case _: ByteBuffer => cond.is(field, op, value.asInstanceOf[ByteBuffer])
 
       case _ => cond
     }
