@@ -4,7 +4,7 @@ import java.nio.ByteBuffer
 import java.sql.Timestamp
 
 import org.ojai.store.QueryCondition
-import org.ojai.types.{ODate, OInterval, OTimestamp}
+import org.ojai.types.OTimestamp
 
 object QueryConditionExtensions {
 
@@ -73,17 +73,17 @@ object QueryConditionExtensions {
 
     def greaterThanEqual[A](value: A): QueryCondition = is(QueryCondition.Op.GREATER_OR_EQUAL, value)
 
-    def ===[A](value: A): QueryCondition = equalTo(field, value)
+    def ===[A](value: A): QueryCondition = equalTo(value)
 
-    def =!=[A](value: A): QueryCondition = notEqual(field, value)
+    def =!=[A](value: A): QueryCondition = notEqual(value)
 
-    def <[A](value: A): QueryCondition = lessThan(field, value)
+    def <[A](value: A): QueryCondition = lessThan(value)
 
-    def <=[A](value: A): QueryCondition = lessThanEqual(field, value)
+    def <=[A](value: A): QueryCondition = lessThanEqual(value)
 
-    def >[A](value: A): QueryCondition = greaterThan(field, value)
+    def >[A](value: A): QueryCondition = greaterThan(value)
 
-    def >=[A](value: A): QueryCondition = greaterThanEqual(field, value)
+    def >=[A](value: A): QueryCondition = greaterThanEqual(value)
   }
 
 }
