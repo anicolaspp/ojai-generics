@@ -7,7 +7,7 @@ Scala constructs.
 
 ## QueryConditions Add-Ons
 
-The OJAI API is written in Java and functions around `QueryCondition` use method overriden for different data types. In other words, 
+The OJAI API is written in Java and functions around `QueryCondition` use method overriding for different data types. In other words, 
 in order to build a query, we need to know the exact type we are using at compile time, and while this seems like a good idea,
 it is far from convient in most occations.
 
