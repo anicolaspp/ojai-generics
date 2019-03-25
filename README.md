@@ -69,5 +69,5 @@ These options are aliases that produce the same results as before just using a m
 
 ## Important Notice
 
-It is very important to notice, that we only adding a thin layer on top of the existing OJAI API. Everything that works there will work while using our library. We only add extended functionality. We don't modify existing functionality in any way.
+It is very important to notice, that we are only adding a thin layer on top of the existing OJAI API. Everything that works there will work while using our library. We only add extended functionality. We don't modify existing functionality in any way.
 
