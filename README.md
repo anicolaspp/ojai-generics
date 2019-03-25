@@ -53,7 +53,7 @@ def buildLessThanCondition(field: String, value: Any)(implicit connection: Conne
 ```
 
 Notice that we have reduced the priously shown code by removing the pattern matching on the type. That means, we are using a
-generic API that is able to accept all possible types. Also, `ojai-genercis` takes care of the castings and convertions for us. Also, it adds operators so we can think about these operations in a very natural way. 
+generic API that is able to accept all possible types. Also, `ojai-genercis` takes care of the castings and convertions for us. In addition, it adds operators so we can think about these operations in a very natural way. 
 
 If we prefer a more Java like API, we can still do the following without loosing type safty and generics. 
 
@@ -66,4 +66,8 @@ def buildLessThanCondition(field: String, value: Any)(implicit connection: Conne
 ```
 
 These options are aliases that produce the same results as before just using a more verbose API. 
+
+## Important Notice
+
+It is very important to notice, that we only adding a thin layer on top of the existing OJAI API. Everything that works there will work while using our library. We only add extended functionality. We don't modify existing functionality in any way.
 
