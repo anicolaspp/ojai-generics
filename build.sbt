@@ -67,10 +67,9 @@ lazy val maprdbconnector = project.in(file("."))
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
 
     libraryDependencies ++= Seq(
-      "org.ojai" % "ojai" % "3.0-mapr-1808",
-      "org.ojai" % "ojai-scala" % "3.0-mapr-1808",
-
-//      "com.mapr.db" % "maprdb-spark" % "2.3.1-mapr-1808" % "provided",
+      "org.ojai" % "ojai" % "3.0-mapr-1808" % "provided",
+      "org.ojai" % "ojai-scala" % "3.0-mapr-1808" % "provided",
+      
       "com.mapr.db" % "maprdb" % "6.1.0-mapr" % "provided",
       "xerces" % "xercesImpl" % "2.11.0" % "provided",
       "org.scalactic" %% "scalactic" % "3.0.5",
