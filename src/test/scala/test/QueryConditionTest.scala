@@ -1,10 +1,11 @@
 package com.github.anicolaspp.ojai
 package test
 
-import org.ojai.store.{Driver, DriverManager, QueryCondition}
+import org.ojai.store._
 import org.scalatest.{FlatSpec, Matchers}
 
 class QueryConditionTest extends FlatSpec with Matchers {
+
   import QueryConditionExtensions._
 
   val connection = DriverManager.getConnection("ojai:mapr:")
@@ -13,14 +14,14 @@ class QueryConditionTest extends FlatSpec with Matchers {
     val condition = connection
       .newCondition()
       .field("name") === "nico"
-    
-    val expected = connection
-        .newCondition()
-        .is("name", QueryCondition.Op.EQUAL, "nico")
-        .build()
-        .asJsonString()
 
-    condition.build().asJsonString() should be (expected)
+    val expected = connection
+      .newCondition()
+      .is("name", QueryCondition.Op.EQUAL, "nico")
+      .build()
+      .asJsonString()
+
+    condition.build().asJsonString() should be(expected)
   }
 
   it should "compare" in {
@@ -36,6 +37,6 @@ class QueryConditionTest extends FlatSpec with Matchers {
       .build()
       .asJsonString()
 
-    condition should be (expected)
+    condition should be(expected)
   }
 }
