@@ -1,5 +1,7 @@
 # ojai-generics
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-generics_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-generics_2.11)
+
 Thin, generic, scala idiomatic layer on top of MapR OJAI
 
 `ojai-generics` presents a very thin layer on top of OJAI that easies working with OJAI from Scala by adding idiomatic 
