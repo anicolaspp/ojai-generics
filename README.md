@@ -1,6 +1,6 @@
 # ojai-generics
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-generics_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-generics_2.11)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-scala-generics_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.anicolaspp/ojai-scala-generics_2.11)
 
 Thin, generic, scala idiomatic layer on top of MapR OJAI
 
