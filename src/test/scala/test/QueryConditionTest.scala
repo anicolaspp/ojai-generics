@@ -4,11 +4,13 @@ package test
 import org.ojai.store._
 import org.scalatest.{FlatSpec, Matchers}
 
-class QueryConditionTest extends FlatSpec with Matchers {
+class QueryConditionTest extends FlatSpec with com.github.anicolaspp.ojai.OjaiTesting with Matchers {
 
   import QueryConditionExtensions._
 
-  val connection = DriverManager.getConnection("ojai:mapr:")
+//  DriverManager.registerDriver(com.mapr.ojai.store.impl.InMemoryDriver)
+
+//  val connection = DriverManager.getConnection("ojai:anicolaspp:mem")
 
   "A query" should "is" in {
     val condition = connection

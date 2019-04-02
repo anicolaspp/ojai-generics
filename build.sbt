@@ -12,9 +12,9 @@ organization in ThisBuild := "com.github.anicolaspp"
 lazy val maprdbconnector = project.in(file("."))
   .settings(
 
-    homepage := Some(url("https://github.com/anicolaspp/MapRDBConnector")),
+    homepage := Some(url("https://github.com/anicolaspp/ojai-generics")),
 
-    scmInfo := Some(ScmInfo(url("https://github.com/anicolaspp/MapRDBConnector"), "git@github.com:anicolaspp/MapRDBConnector.git")),
+    scmInfo := Some(ScmInfo(url("https://github.com/anicolaspp/ojai-generics"), "git@github.com:anicolaspp/ojai-generics.git")),
 
     pomExtra := <developers>
       <developer>
@@ -29,14 +29,14 @@ lazy val maprdbconnector = project.in(file("."))
 
     publishMavenStyle := true,
 
-    publishTo := Some(Resolver.file("file", new File("/Users/nperez/maven"))),
-    //
-    //    publishTo in ThisBuild := Some(
-    //      if (isSnapshot.value)
-    //        Opts.resolver.sonatypeSnapshots
-    //      else
-    //        Opts.resolver.sonatypeStaging
-    //    ),
+//    publishTo := Some(Resolver.file("file", new File("/Users/nperez/maven"))),
+
+        publishTo in ThisBuild := Some(
+          if (isSnapshot.value)
+            Opts.resolver.sonatypeSnapshots
+          else
+            Opts.resolver.sonatypeStaging
+        ),
 
     publishArtifact in Test := false,
 
@@ -66,6 +66,8 @@ lazy val maprdbconnector = project.in(file("."))
 
     resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/",
 
+//    resolvers += "Local Maven Repository" at "file://"+Path.userHome.absolutePath+"/.m2/repository",
+
     libraryDependencies ++= Seq(
       "org.ojai" % "ojai" % "3.0-mapr-1808" % "provided",
       "org.ojai" % "ojai-scala" % "3.0-mapr-1808" % "provided",
@@ -73,7 +75,9 @@ lazy val maprdbconnector = project.in(file("."))
       "com.mapr.db" % "maprdb" % "6.1.0-mapr" % "provided",
       "xerces" % "xercesImpl" % "2.11.0" % "provided",
       "org.scalactic" %% "scalactic" % "3.0.5",
-      "org.scalatest" %% "scalatest" % "3.0.5" % "test"
+      "org.scalatest" %% "scalatest" % "3.0.5" % "test",
+
+      "com.github.anicolaspp" % "ojai-testing_2.11" % "1.0.3"
     )
   )
 
