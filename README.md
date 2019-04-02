@@ -69,6 +69,24 @@ def buildLessThanCondition(field: String, value: Any)(implicit connection: Conne
 
 These options are aliases that produce the same results as before just using a more verbose API. 
 
+## Linking
+
+### Maven
+
+```xml
+<dependency>
+  <groupId>com.github.anicolaspp</groupId>
+  <artifactId>ojai-scala-generics_2.11</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
+### SBT
+
+```sbt
+libraryDependencies += "com.github.anicolaspp" % "ojai-scala-generics_2.11" % "1.0.0"
+```
+
 ## Important Notice
 
 It is very important to notice, that we are only adding a thin layer on top of the existing OJAI API. Everything that works there will work while using our library. We only add extended functionality. We don't modify existing functionality in any way.
