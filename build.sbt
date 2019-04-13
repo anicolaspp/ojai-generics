@@ -77,7 +77,7 @@ lazy val maprdbconnector = project.in(file("."))
       "org.scalactic" %% "scalactic" % "3.0.5",
       "org.scalatest" %% "scalatest" % "3.0.5" % "test",
 
-      "com.github.anicolaspp" % "ojai-testing_2.11" % "1.0.3"
+      "com.github.anicolaspp" % "ojai-testing_2.11" % "1.0.4"
     )
   )
 
